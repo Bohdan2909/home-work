@@ -1,5 +1,5 @@
 .friendMessage {
-    /*justify-content: flex-start;*/
+   position: relative;
     display: flex;
     margin-bottom: 73px;
 }
@@ -61,7 +61,7 @@
 
 .friendTime {
     position: absolute;
-    top: 461px;
+    top: 166px;
     left: 77px;
     font-weight: 600;
     font-size: 10px;
