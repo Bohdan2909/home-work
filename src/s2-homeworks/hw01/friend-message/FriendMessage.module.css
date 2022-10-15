@@ -1,7 +1,11 @@
 .friendMessage {
-   position: relative;
+    position: relative;
     display: flex;
     margin-bottom: 73px;
+    flex-direction: column;
+    align-items: flex-start;
+
+
 }
 
 .friendImageAndText {
@@ -11,7 +15,7 @@
     justify-content: flex-start;
     width: 575px;
     margin-left: 70px;
-    margin-top: 108px;
+    /*margin-top: 108px;*/
 }
 
 .friendImageAndText img {
@@ -60,12 +64,13 @@
 }
 
 .friendTime {
-    position: absolute;
-    top: 166px;
-    left: 77px;
+    /*position: absolute;*/
+    /*top: 166px;*/
+    /*left: 77px;*/
     font-weight: 600;
     font-size: 10px;
     line-height: 12px;
     color: #000000;
     margin-top: 5px;
+    margin-left: 78px;
 }
