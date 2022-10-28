@@ -29,7 +29,8 @@
     width: 372px;
     height: 36px;
     margin-right: 12px;
-    border: 1px solid red
+    border: 1px solid red;
+    padding: 10px;
 }
 
 .button {
