@@ -1,7 +1,6 @@
 import {UserType} from '../HW8'
 
-type ActionType =
-    | {
+type ActionType = {
     type: 'sort';
     payload: 'up' | 'down'
 }
