@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {useState} from 'react'
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
 import {restoreState} from '../hw06/localStorage/localStorage'
@@ -24,8 +24,6 @@ function HW11() {
        }else{
            setValue1(value)
        }
-
-
     }
 
 
@@ -65,68 +63,3 @@ function HW11() {
 }
 
 export default HW11
-// class ExampleApp extends React.Component {
-//     constructor(props) {
-//         super(props);
-//
-//         this.state = {
-//             value: 5,
-//             value2: 10,
-//             value3: 10,
-//             value4: {
-//                 min: 5,
-//                 max: 10,
-//             },
-//             value5: {
-//                 min: 3,
-//                 max: 7,
-//             },
-//         };
-//     }
-//
-//     render() {
-//         return (
-//             <form className="form">
-//                 <InputRange
-//                     maxValue={20}
-//                     minValue={0}
-//                     value={this.state.value}
-//                     onChange={value => this.setState({ value })}
-//                     onChangeComplete={value => console.log(value)} />
-//
-//                 <InputRange
-//                     maxValue={20}
-//                     minValue={0}
-//                     disabled
-//                     value={this.state.value2}
-//                     onChange={value => this.setState({ value })}
-//                     onChangeComplete={value => console.log(value)} />
-//
-//                 <InputRange
-//                     maxValue={20}
-//                     minValue={0}
-//                     formatLabel={value => value.toFixed(2)}
-//                     value={this.state.value3}
-//                     onChange={value => this.setState({ value3: value })}
-//                     onChangeComplete={value => console.log(value)} />
-//
-//                 <InputRange
-//                     maxValue={20}
-//                     minValue={0}
-//                     formatLabel={value => `${value} kg`}
-//                     value={this.state.value4}
-//                     onChange={value => this.setState({ value4: value })}
-//                     onChangeComplete={value => console.log(value)} />
-//
-//                 <InputRange
-//                     draggableTrack
-//                     maxValue={20}
-//                     minValue={0}
-//                     formatLabel={value => `${value} kg`}
-//                     value={this.state.value5}
-//                     onChange={value => this.setState({ value5: value })}
-//                     onChangeComplete={value => console.log(value)} />
-//             </form>
-//         );
-//     }
-// }
