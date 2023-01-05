@@ -37,26 +37,27 @@ const HW13 = () => {
                 console.log(res)
                 setCode('Код 200!')
                 setImage(success200)
-                setText('код 200 - обычно означает что скорее всего всё ок)')
+                setText(res.data.errorText)
                 // дописать
 
             })
             .catch((e) => {
-                console.log(e)
+                console.log(e.response)
                 if (x === undefined) {
                     setCode('Ошибка 400!')
                     setImage(error400)
-                    setText('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                    setText(e.response.data.errorText)
                 }
                 if (x === false) {
                     setCode('Ошибка 500!')
-                    setText('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                    setText(e.response.data.errorText)
                     setImage(error500)
                 }
                 if (x === null) {
-                    setCode('Error!')
-                    setText('Network Error AxiosError')
+                    // setCode('Error!')
+                    setText('Error')
                     setImage(errorUnknown)
+
                 }
             })
             .finally(() => {
