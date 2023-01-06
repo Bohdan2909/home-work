@@ -37,31 +37,50 @@ const HW13 = () => {
                 console.log(res)
                 setCode('Код 200!')
                 setImage(success200)
-                setText(res.data.info)
+                setInfo(res.data.info)
+                setText(res.data.errorText)
                 // дописать
 
             })
             .catch((e) => {
-                console.log(e.response)
-                if (x === undefined) {
-                    setCode('Ошибка 400!')
-                    setImage(error400)
-                    setText(e.response.data.errorText)
-                }
-                if (x === false) {
-                    setCode('Ошибка 500!')
-                    setText(e.response.data.errorText)
-                    setImage(error500)
-                }
-                if (x === null) {
-                    // setCode('Error!')
-                    setText('Error')
-                    setImage(errorUnknown)
+                // console.log(e.response)
+                // if (x === undefined) {
+                //     setCode('Ошибка 400!')
+                //     setImage(error400)
+                //     setText(e.response.data.errorText)
+                // }
+                // if (x === false) {
+                //     setCode('Ошибка 500!')
+                //     setText(e.response.data.errorText)
+                //     setImage(error500)
+                // }
+                // if (x === null) {
+                //     // setCode('Error!')
+                //     setText('Error')
+                //     setImage(errorUnknown)
+                //
+                // }
 
+                if (e.response.status === 400) {
+                    setImage(error400)
+                    setCode('Ошибка 400!')
+                    setInfo(e.response.data.info)
+                    setText(e.response.data.errorText)
                 }
-            })
-            .finally(() => {
-                setInfo('')
+                if (e.response.status === 500) {
+                    setImage(error500)
+                    setCode('Ошибка 500!')
+                    setInfo(e.response.data.info)
+                    setText(e.response.data.errorText)
+                }
+                if (e.response.status === 0) {
+                    console.log(e)
+                    setImage(error500)
+                    setCode('Error')
+                    setInfo('Axios Error')
+                    setText('Network error')
+                }
+
             })
     }
 
@@ -75,7 +94,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        disabled={info !== ''}
+                        disabled={info === '...loading'}
                         // дописать
                     >
                         Send true
@@ -84,7 +103,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        disabled={info !== ''}
+                        disabled={info === '...loading'}
 
                         // дописать
 
@@ -95,7 +114,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        disabled={info !== ''}
+                        disabled={info === '...loading'}
 
                         // дописать
 
@@ -106,7 +125,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        disabled={info !== ''}
+                        disabled={info === '...loading'}
 
                         // дописать
 
